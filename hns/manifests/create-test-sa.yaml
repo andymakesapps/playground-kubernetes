@@ -1,0 +1,9 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  labels:
+    label-one: "value-one"
+  name: iamserviceaccount-sample-7
+  namespace: ama-spi-main
+spec:
+  displayName: Example Service Account

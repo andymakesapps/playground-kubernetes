@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ama-api-main-iam-manager-role
+  namespace: ama-api-main
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: iam-admin
+subjects:
+- kind: User
+  name: iam-manager@ama-spi-main.iam.gserviceaccount.com
