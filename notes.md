@@ -86,3 +86,4 @@ Furthermore, if we use a VM where the calls run from (The VM uses the iam-manage
 ## 4. Control access in managed project's root namespace
 
 As long as we do not add any RoleBindings on the root namespace, the group using Kubernetes Admin in the project is able to manage the resources within. Otherwise, the control can be granted similarly to what we did for managed projects, but this time using the root project. 
+
