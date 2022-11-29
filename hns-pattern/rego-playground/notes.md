@@ -83,3 +83,26 @@ spec:
 In other words, the constraint will set invalidName from the template function to "external". The same constraint can obviouslly be used to set other fields from the request as invalid, hence why we use templates. Also, something I noticed is that we cannot deploy both a tempalte and a constraint that references it in the same request. They will need to be separate .yaml files, and will have to be deployed sequentially, otherwise the constraint deployment will fail.
 
 With both the template and constraint in place, trying to deploy iam-policy-member-ex1.yaml again will cause a failure.
+
+```
+Error from server (Forbidden): error when creating "iam-policy-7.yaml": admission webhook "validation.gatekeeper.sh" denied the request: [no-external-a-spi-name-3] The name external is not allowed
+[no-external-a-spi-name] The name projects/a-spi-controller is not allowed
+```
+
+Mutation:
+
+```
+apiVersion: mutations.gatekeeper.sh/v1
+kind: Assign
+metadata:
+  name: set-external-field
+spec:
+  applyTo:
+  - groups: ["iam.cnrm.cloud.google.com"]
+    kinds: ["IAMPolicyMember"]
+    versions: ["v1beta1", "iam.cnrm.cloud.google.com/v1beta1"]
+  location: "spec.resourceRef.external"
+  parameters:
+    assign:
+      value: None
+```
