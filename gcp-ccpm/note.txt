@@ -1,136 +1,288 @@
-kubectl describe iampolicymembers.iam.cnrm.cloud.google.com -n a-spi-host
-
-Name:         iampolicymember-sample-projlevel
-Namespace:    a-spi-host
-Labels:       <none>
-Annotations:  <none>
-API Version:  iam.cnrm.cloud.google.com/v1beta1
-Kind:         IAMPolicyMember
+Name:         iampolicymembers.iam.cnrm.cloud.google.com
+Namespace:
+Labels:       cnrm.cloud.google.com/managed-by-kcc=true
+              cnrm.cloud.google.com/system=true
+              core.cnrm.cloud.google.com/configconnector=configconnector.core.cnrm.cloud.google.com
+Annotations:  cnrm.cloud.google.com/version: 1.89.0
+API Version:  apiextensions.k8s.io/v1
+Kind:         CustomResourceDefinition
 Metadata:
-  Creation Timestamp:  2023-01-05T15:14:18Z
-  Finalizers:
-    cnrm.cloud.google.com/finalizer
-    cnrm.cloud.google.com/deletion-defender
-  Generation:  1
-  Managed Fields:
-    API Version:  iam.cnrm.cloud.google.com/v1beta1
-    Fields Type:  FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .:
-          f:kubectl.kubernetes.io/last-applied-configuration:
-      f:spec:
-        .:
-        f:member:
-        f:resourceRef:
-          .:
-          f:external:
-          f:kind:
-        f:role:
-    Manager:      kubectl-client-side-apply
-    Operation:    Update
-    Time:         2023-01-05T15:14:18Z
-    API Version:  iam.cnrm.cloud.google.com/v1beta1
-    Fields Type:  FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:finalizers:
-          .:
-          v:"cnrm.cloud.google.com/deletion-defender":
-          v:"cnrm.cloud.google.com/finalizer":
-    Manager:      manager
-    Operation:    Update
-    Time:         2023-01-05T15:14:18Z
-    API Version:  iam.cnrm.cloud.google.com/v1beta1
-    Fields Type:  FieldsV1
-    fieldsV1:
-      f:status:
-        .:
-        f:conditions:
-        f:observedGeneration:
-    Manager:         cnrm-controller-manager
-    Operation:       Update
-    Subresource:     status
-    Time:            2023-01-05T15:14:27Z
-  Resource Version:  20848
-  UID:               b84426eb-4862-4b5f-a428-7c62eb742c33
-Spec:
-  Member:  serviceAccount:iamserviceaccount-sample@a-spi-host.iam.gserviceaccount.com
-  Resource Ref:
-    API Version:  resourcemanager.cnrm.cloud.google.com/v1beta1
-    External:     projects/a-spi-host
-    Kind:         Project
-  Role:           roles/storage.admin
-Status:
-  Conditions:
-    Last Transition Time:  2023-01-05T15:14:27Z
-    Message:               The resource is up to date
-    Reason:                UpToDate
-    Status:                True
-    Type:                  Ready
-  Observed Generation:     1
-Events:                    <none>
-
-
-Name:         iampolicymember-sample-projlevel-2
-Namespace:    a-spi-host
-Labels:       <none>
-Annotations:  cnrm.cloud.google.com/project-id: a-spi-host
-API Version:  iam.cnrm.cloud.google.com/v1beta1
-Kind:         IAMPolicyMember
-Metadata:
-  Creation Timestamp:  2023-01-05T20:19:05Z
+  Creation Timestamp:  2023-01-05T14:39:54Z
   Generation:          1
   Managed Fields:
-    API Version:  iam.cnrm.cloud.google.com/v1beta1
-    Fields Type:  FieldsV1
-    fieldsV1:
-      f:status:
-        .:
-        f:conditions:
-        f:observedGeneration:
-    Manager:      cnrm-controller-manager
-    Operation:    Update
-    Subresource:  status
-    Time:         2023-01-05T20:19:05Z
-    API Version:  iam.cnrm.cloud.google.com/v1beta1
+    API Version:  apiextensions.k8s.io/v1
     Fields Type:  FieldsV1
     fieldsV1:
       f:metadata:
         f:annotations:
           .:
-          f:cnrm.cloud.google.com/project-id:
+          f:cnrm.cloud.google.com/version:
           f:kubectl.kubernetes.io/last-applied-configuration:
-      f:spec:
-        .:
-        f:member:
-        f:resourceRef:
+        f:labels:
           .:
+          f:cnrm.cloud.google.com/managed-by-kcc:
+          f:cnrm.cloud.google.com/system:
+          f:core.cnrm.cloud.google.com/configconnector:
+        f:ownerReferences:
+          .:
+          k:{"uid":"d283bda7-9efc-4415-9433-19bbed3f0aad"}:
+      f:spec:
+        f:conversion:
+          .:
+          f:strategy:
+        f:group:
+        f:names:
+          f:categories:
           f:kind:
-          f:name:
-        f:role:
-    Manager:         kubectl-client-side-apply
-    Operation:       Update
-    Time:            2023-01-05T20:19:05Z
-  Resource Version:  177508
-  UID:               8f0323fe-0187-41f6-a24f-5df041a908d8
+          f:listKind:
+          f:plural:
+          f:shortNames:
+          f:singular:
+        f:scope:
+        f:versions:
+    Manager:      Go-http-client
+    Operation:    Update
+    Time:         2023-01-05T14:39:54Z
+    API Version:  apiextensions.k8s.io/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        f:acceptedNames:
+          f:categories:
+          f:kind:
+          f:listKind:
+          f:plural:
+          f:shortNames:
+          f:singular:
+        f:conditions:
+          k:{"type":"Established"}:
+            .:
+            f:lastTransitionTime:
+            f:message:
+            f:reason:
+            f:status:
+            f:type:
+          k:{"type":"NamesAccepted"}:
+            .:
+            f:lastTransitionTime:
+            f:message:
+            f:reason:
+            f:status:
+            f:type:
+    Manager:      kube-apiserver
+    Operation:    Update
+    Subresource:  status
+    Time:         2023-01-05T14:39:54Z
+  Owner References:
+    API Version:           core.cnrm.cloud.google.com/v1beta1
+    Block Owner Deletion:  true
+    Controller:            true
+    Kind:                  ConfigConnector
+    Name:                  configconnector.core.cnrm.cloud.google.com
+    UID:                   d283bda7-9efc-4415-9433-19bbed3f0aad
+  Resource Version:        2495
+  UID:                     bd2e2beb-55eb-43e6-9321-014a1adc4042
 Spec:
-  Member:  serviceAccount:iamserviceaccount-sample@a-spi-host.iam.gserviceaccount.com
-  Resource Ref:
-    API Version:  resourcemanager.cnrm.cloud.google.com/v1beta1
-    Kind:         Project
-    Name:         a-spi-host
-  Role:           roles/compute.admin
+  Conversion:
+    Strategy:  None
+  Group:       iam.cnrm.cloud.google.com
+  Names:
+    Categories:
+      gcp
+    Kind:       IAMPolicyMember
+    List Kind:  IAMPolicyMemberList
+    Plural:     iampolicymembers
+    Short Names:
+      gcpiampolicymember
+      gcpiampolicymembers
+    Singular:  iampolicymember
+  Scope:       Namespaced
+  Versions:
+    Additional Printer Columns:
+      Json Path:    .metadata.creationTimestamp
+      Name:         Age
+      Type:         date
+      Description:  When 'True' the most recent reconcile of the resource succeeded
+      Json Path:    .status.conditions[?(@.type=='Ready')].status
+      Name:         Ready
+      Type:         string
+      Description:  The reason for the value in 'Ready'
+      Json Path:    .status.conditions[?(@.type=='Ready')].reason
+      Name:         Status
+      Type:         string
+      Json Path:    .status.conditions[?(@.type=='Ready')].lastTransitionTime
+      Name:         Status Age
+      Type:         date
+    Name:           v1beta1
+    Schema:
+      openAPIV3Schema:
+        Description:  IAMPolicyMember is the Schema for the iampolicies API
+        Properties:
+          API Version:
+            Description:  APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            Type:         string
+          Kind:
+            Description:  Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            Type:         string
+          Metadata:
+            Type:  object
+          Spec:
+            Description:  IAMPolicyMemberSpec defines the desired state of IAMPolicyMember
+            One Of:
+              Required:
+                member
+              Required:
+                memberFrom
+            Properties:
+              Condition:
+                Description:  Immutable. Optional. The condition under which the binding applies.
+                Properties:
+                  Description:
+                    Type:  string
+                  Expression:
+                    Type:  string
+                  Title:
+                    Type:  string
+                Required:
+                  expression
+                  title
+                Type:  object
+              Member:
+                Description:  Immutable. The IAM identity to be bound to the role. Exactly one of 'member' or 'memberFrom' must be used.
+                Type:         string
+              Member From:
+                Description:  Immutable. The IAM identity to be bound to the role. Exactly one of 'member' or 'memberFrom' must be used, and only one subfield within 'memberFrom' can be used.
+                One Of:
+                  Required:
+                    logSinkRef
+                  Required:
+                    serviceAccountRef
+                Properties:
+                  Log Sink Ref:
+                    Description:  The LoggingLogSink whose writer identity (i.e. its 'status.writerIdentity') is to be bound to the role.
+                    Properties:
+                      Name:
+                        Type:  string
+                      Namespace:
+                        Type:  string
+                    Required:
+                      name
+                    Type:  object
+                  Service Account Ref:
+                    Description:  The IAMServiceAccount to be bound to the role.
+                    Properties:
+                      Name:
+                        Type:  string
+                      Namespace:
+                        Type:  string
+                    Required:
+                      name
+                    Type:  object
+                Type:      object
+              Resource Ref:
+                Description:  Immutable. Required. The GCP resource to set the IAM policy on.
+                One Of:
+                  Not:
+                    Required:
+                      external
+                  Required:
+                    name
+                  Not:
+                    Any Of:
+                      Required:
+                        name
+                      Required:
+                        namespace
+                  Required:
+                    external
+                  Not:
+                    Any Of:
+                      Required:
+                        name
+                      Required:
+                        namespace
+                      Required:
+                        apiVersion
+                      Required:
+                        external
+                Properties:
+                  API Version:
+                    Type:  string
+                  External:
+                    Type:  string
+                  Kind:
+                    Type:  string
+                  Name:
+                    Type:  string
+                  Namespace:
+                    Type:  string
+                Required:
+                  kind
+                Type:  object
+              Role:
+                Description:  Immutable. Required. The role for which the Member will be bound.
+                Pattern:      ^((projects|organizations)/[^/]+/)?roles/[\w_\.]+$
+                Type:         string
+            Required:
+              resourceRef
+              role
+            Type:  object
+          Status:
+            Description:  IAMPolicyMemberStatus defines the observed state of IAMPolicyMember
+            Properties:
+              Conditions:
+                Description:  Conditions represent the latest available observations of the IAM policy's current state.
+                Items:
+                  Properties:
+                    Last Transition Time:
+                      Description:  Last time the condition transitioned from one status to another.
+                      Type:         string
+                    Message:
+                      Description:  Human-readable message indicating details about last transition.
+                      Type:         string
+                    Reason:
+                      Description:  Unique, one-word, CamelCase reason for the condition's last transition.
+                      Type:         string
+                    Status:
+                      Description:  Status is the status of the condition. Can be True, False, Unknown.
+                      Type:         string
+                    Type:
+                      Description:  Type is the type of the condition.
+                      Type:         string
+                  Type:             object
+                Type:               array
+              Observed Generation:
+                Description:  ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+                Format:       int64
+                Type:         integer
+            Type:             object
+        Type:                 object
+    Served:                   true
+    Storage:                  true
+    Subresources:
+      Status:
 Status:
+  Accepted Names:
+    Categories:
+      gcp
+    Kind:       IAMPolicyMember
+    List Kind:  IAMPolicyMemberList
+    Plural:     iampolicymembers
+    Short Names:
+      gcpiampolicymember
+      gcpiampolicymembers
+    Singular:  iampolicymember
   Conditions:
-    Last Transition Time:  2023-01-05T20:19:05Z
-    Message:               reference Project a-spi-host/a-spi-host is not found
-    Reason:                DependencyNotFound
-    Status:                False
-    Type:                  Ready
-  Observed Generation:     1
-Events:
-  Type     Reason              Age                       From                        Message
-  ----     ------              ----                      ----                        -------
-  Warning  DependencyNotFound  4m30s (x3390 over 4d16h)  iampolicymember-controller  reference Project a-spi-host/a-spi-host is not found
+    Last Transition Time:  2023-01-05T14:39:54Z
+    Message:               no conflicts found
+    Reason:                NoConflicts
+    Status:                True
+    Type:                  NamesAccepted
+    Last Transition Time:  2023-01-05T14:40:10Z
+    Message:               the initial names have been accepted
+    Reason:                InitialNamesAccepted
+    Status:                True
+    Type:                  Established
+  Stored Versions:
+    v1beta1
+Events:  <none>
