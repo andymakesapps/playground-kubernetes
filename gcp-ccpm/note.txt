@@ -1,0 +1,136 @@
+kubectl describe iampolicymembers.iam.cnrm.cloud.google.com -n a-spi-host
+
+Name:         iampolicymember-sample-projlevel
+Namespace:    a-spi-host
+Labels:       <none>
+Annotations:  <none>
+API Version:  iam.cnrm.cloud.google.com/v1beta1
+Kind:         IAMPolicyMember
+Metadata:
+  Creation Timestamp:  2023-01-05T15:14:18Z
+  Finalizers:
+    cnrm.cloud.google.com/finalizer
+    cnrm.cloud.google.com/deletion-defender
+  Generation:  1
+  Managed Fields:
+    API Version:  iam.cnrm.cloud.google.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:kubectl.kubernetes.io/last-applied-configuration:
+      f:spec:
+        .:
+        f:member:
+        f:resourceRef:
+          .:
+          f:external:
+          f:kind:
+        f:role:
+    Manager:      kubectl-client-side-apply
+    Operation:    Update
+    Time:         2023-01-05T15:14:18Z
+    API Version:  iam.cnrm.cloud.google.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .:
+          v:"cnrm.cloud.google.com/deletion-defender":
+          v:"cnrm.cloud.google.com/finalizer":
+    Manager:      manager
+    Operation:    Update
+    Time:         2023-01-05T15:14:18Z
+    API Version:  iam.cnrm.cloud.google.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        .:
+        f:conditions:
+        f:observedGeneration:
+    Manager:         cnrm-controller-manager
+    Operation:       Update
+    Subresource:     status
+    Time:            2023-01-05T15:14:27Z
+  Resource Version:  20848
+  UID:               b84426eb-4862-4b5f-a428-7c62eb742c33
+Spec:
+  Member:  serviceAccount:iamserviceaccount-sample@a-spi-host.iam.gserviceaccount.com
+  Resource Ref:
+    API Version:  resourcemanager.cnrm.cloud.google.com/v1beta1
+    External:     projects/a-spi-host
+    Kind:         Project
+  Role:           roles/storage.admin
+Status:
+  Conditions:
+    Last Transition Time:  2023-01-05T15:14:27Z
+    Message:               The resource is up to date
+    Reason:                UpToDate
+    Status:                True
+    Type:                  Ready
+  Observed Generation:     1
+Events:                    <none>
+
+
+Name:         iampolicymember-sample-projlevel-2
+Namespace:    a-spi-host
+Labels:       <none>
+Annotations:  cnrm.cloud.google.com/project-id: a-spi-host
+API Version:  iam.cnrm.cloud.google.com/v1beta1
+Kind:         IAMPolicyMember
+Metadata:
+  Creation Timestamp:  2023-01-05T20:19:05Z
+  Generation:          1
+  Managed Fields:
+    API Version:  iam.cnrm.cloud.google.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        .:
+        f:conditions:
+        f:observedGeneration:
+    Manager:      cnrm-controller-manager
+    Operation:    Update
+    Subresource:  status
+    Time:         2023-01-05T20:19:05Z
+    API Version:  iam.cnrm.cloud.google.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:cnrm.cloud.google.com/project-id:
+          f:kubectl.kubernetes.io/last-applied-configuration:
+      f:spec:
+        .:
+        f:member:
+        f:resourceRef:
+          .:
+          f:kind:
+          f:name:
+        f:role:
+    Manager:         kubectl-client-side-apply
+    Operation:       Update
+    Time:            2023-01-05T20:19:05Z
+  Resource Version:  177508
+  UID:               8f0323fe-0187-41f6-a24f-5df041a908d8
+Spec:
+  Member:  serviceAccount:iamserviceaccount-sample@a-spi-host.iam.gserviceaccount.com
+  Resource Ref:
+    API Version:  resourcemanager.cnrm.cloud.google.com/v1beta1
+    Kind:         Project
+    Name:         a-spi-host
+  Role:           roles/compute.admin
+Status:
+  Conditions:
+    Last Transition Time:  2023-01-05T20:19:05Z
+    Message:               reference Project a-spi-host/a-spi-host is not found
+    Reason:                DependencyNotFound
+    Status:                False
+    Type:                  Ready
+  Observed Generation:     1
+Events:
+  Type     Reason              Age                       From                        Message
+  ----     ------              ----                      ----                        -------
+  Warning  DependencyNotFound  4m30s (x3390 over 4d16h)  iampolicymember-controller  reference Project a-spi-host/a-spi-host is not found
